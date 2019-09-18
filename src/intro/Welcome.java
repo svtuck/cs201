@@ -1,3 +1,5 @@
+package intro;
+
 public class Welcome {
 
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package intro;
+
 public class Timed {
 
     int a;
