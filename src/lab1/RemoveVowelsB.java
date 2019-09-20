@@ -9,6 +9,10 @@ public class RemoveVowelsB {
      * Returns a new array that is a copy of s with vowels removed.
      * The new array should have no empty characters (it should be smaller in length than s).
      *
+     *
+     * {'t', 'h', 'e', ' ', 'd', 'o', 'g'} -> {'t', 'h',  ' ', 'd', 'g'}
+     *
+     *
      * @param s an array
      * @return a new array
      */

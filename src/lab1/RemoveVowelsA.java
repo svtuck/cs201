@@ -6,7 +6,9 @@ public class RemoveVowelsA {
 
 
     /**
-     * Modifies 's' removing 'a', 'e', 'i', 'o', 'u'
+     * Modifies 's' removing 'a', 'e', 'i', 'o', 'u' and shifting other characters
+     *
+     * {'t', 'h', 'e', ' ', 'd', 'o', 'g'} -> {'t', 'h',  ' ', 'd', 'g', '', ''}
      *
      * @param s an array
      * @return
