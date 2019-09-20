@@ -9,7 +9,7 @@ public class RemoveVowels {
      * @param s a string
      * @return
      */
-    static String removeVowels(String s) {
+    public static String removeVowels(String s) {
         return null;
     }
 
