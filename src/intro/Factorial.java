@@ -15,5 +15,6 @@ public class Factorial {
         int n = 3;
         int result = factorial(n);
         System.out.println("the result is " + result);
+
     }
 }
