@@ -1,3 +1,4 @@
+// delete this line if this is not in a folder called lab1
 package lab1;
 
 public class RemoveVowels {
