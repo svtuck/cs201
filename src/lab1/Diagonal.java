@@ -27,11 +27,9 @@ public class Diagonal {
      * @return
      */
     public static int[][] readMatrixFromFilename(String filename) throws IOException {
-        "goo".charAt(1);
-        File f = new File(filename);
 
-        // Read file into List of strings
-        //Files.readAllLines(f.toPath());
+        File f = new File(filename);
+        // Determine number of rows in matrix
 
         Scanner scanner = new Scanner(f);
 
@@ -41,26 +39,22 @@ public class Diagonal {
             numberOfLines = numberOfLines + 1;
         }
         System.out.println(numberOfLines);
-        // Determine size of array, create int[][]
+
+        // Create matrix
         int [][] matrix = new int[numberOfLines][numberOfLines];
 
         Scanner contentScanner = new Scanner(f);
-
+        // Populate matrix
         for(int i = 0; i < numberOfLines; i++) {
             for(int j = 0; j < numberOfLines; j++) {
                 matrix[i][j] = contentScanner.nextInt();
             }
         }
 
-        // Turn each string into an array of ints
         return matrix;
     }
 
     public static void main(String[] args) throws IOException {
-
-
-        int [][] m = {{1,2,3},{4,5,6},{7,8,9}};
-
 
         String filename = "text/lab1/matrix2";
 
