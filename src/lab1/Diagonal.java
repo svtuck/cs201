@@ -1,7 +1,9 @@
-// delete this line if this is not in a folder called lab1
-package lab1;
+package lab1;// delete this line if this is not in a folder called lab1
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
+import java.util.Arrays;
 
 public class Diagonal {
 
@@ -24,21 +26,51 @@ public class Diagonal {
      * @param filename
      * @return
      */
-    public static int[][] readMatrixFromFilename(String filename) {
-        // Read file into List of strings
+    public static int[][] readMatrixFromFilename(String filename) throws IOException {
+        "goo".charAt(1);
+        File f = new File(filename);
 
+        // Read file into List of strings
+        //Files.readAllLines(f.toPath());
+
+        Scanner scanner = new Scanner(f);
+
+        int numberOfLines = 0;
+        while(scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            numberOfLines = numberOfLines + 1;
+        }
+        System.out.println(numberOfLines);
         // Determine size of array, create int[][]
+        int [][] matrix = new int[numberOfLines][numberOfLines];
+
+        Scanner contentScanner = new Scanner(f);
+
+        for(int i = 0; i < numberOfLines; i++) {
+            for(int j = 0; j < numberOfLines; j++) {
+                matrix[i][j] = contentScanner.nextInt();
+            }
+        }
 
         // Turn each string into an array of ints
-        return null;
+        return matrix;
     }
 
     public static void main(String[] args) throws IOException {
 
-        String filename = args[0];
+
+        int [][] m = {{1,2,3},{4,5,6},{7,8,9}};
+
+
+        String filename = "text/lab1/matrix2";
+
         int[][] matrix = readMatrixFromFilename(filename);
-        int diff = diagonalDifference(matrix);
-        System.out.println("The difference is: " + diff);
+
+        for(int i = 0; i < matrix.length; i++ ){
+            for(int j = 0; j < matrix.length; j++) {
+                System.out.println(matrix[i][j]);
+            }
+        }
 
     }
 }
