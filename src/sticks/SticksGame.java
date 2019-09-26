@@ -1,6 +1,8 @@
-package sticks;
-
 import java.util.Scanner;
+
+import sticks.AI;
+import sticks.Human;
+import sticks.Player;
 
 // Game of sticks, main method
 // Written by Dave Musicant
@@ -9,8 +11,35 @@ public class SticksGame
 
    public static void playGameOnce(Player player1, Player player2, int totalSticks)
    {
-      System.out.println("Here is where the game shall be played!");
-   }   
+      Player current = player1;
+      Player next = player2;
+      while(totalSticks > 0) {
+         System.out.println("There are " + totalSticks + "(s) on the board");
+         int numSticks = current.move(totalSticks);
+         totalSticks -= numSticks;
+         Player t = current;
+         current = next;
+         next = t;
+
+      }
+      current.endGame(false);
+      current.endGame(true);
+
+      signOff(player1);
+      signOff(player2);
+   }
+
+   private static void signOff(AI ai) {
+      System.out.println("AI");
+   }
+
+   private static void signOff(Human h) {
+      System.out.println("human");
+   }
+
+   private static void signOff(Player h) {
+      System.out.println("player");
+   }
    
    public static void main(String[] args)
    {
