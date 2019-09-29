@@ -9,13 +9,13 @@ public class BagTimer {
      */
     public static long timeAdd(Bag b, String s) {
         long start = System.nanoTime();
-       // b.add(s);
+        b.add(s);
         long end = System.nanoTime();
         return end - start;
     }
 
-    public static void testMe(Bag b, int p) {
-        int n = (int) Math.pow(2,p) + 1;
+    public static void timeMe(Bag b, int n) {
+
         long[] times = new long[n];
         for(int i = 0; i < n; i++ ) {
             times[i] = timeAdd(b, "foo");
