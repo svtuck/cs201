@@ -42,4 +42,32 @@ public class LinkedBag <T> implements Bag<T> {
         }
         return size;
     }
+
+    public int getFrequencyOf(T anEntry) {
+        int frequency = 0;
+        Node current = head;
+        while (current != null) {
+            if (current.data.equals(anEntry)) {
+                frequency++;
+            }
+            current = current.next;
+        }
+        return frequency;
+    }
+
+    public boolean remove(T anEntry)
+    {
+        Node current = head;
+        while (current != null)
+        {
+            // Remove by swapping first position in
+            if (current.data.equals(anEntry)) {
+                current.data = head.data;
+                head = head.next;
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
 }

@@ -33,10 +33,7 @@ public class BagTester {
         System.out.println(b.add("CMC"));
 
         System.out.println(b.add("CMC"));
-        while(b.getCurrentSize() > 0 ) {
-            String o = b.grab();
-            o.length();
-        }
+
 
         System.out.println(b.getCurrentSize());
 
