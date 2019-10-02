@@ -1,8 +1,10 @@
 package stacksqueues;
 
+import java.util.Stack;
+
 public class StackTester {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EmptyStackException {
         CarlStack<String> stack = new ArrayStack(10);
         String expression = "2 + ( 7 * 9 ) / ( 2 + ( 3 - 9 ) )";
         String[] tokens = expression.split(" ");
@@ -14,11 +16,11 @@ public class StackTester {
             if( token.equals(")")) {
                 try {
                     stack.pop();
+                } catch( EmptyStackException e) {
+                    System.out.println("Too many right parantheses");
+                    throw e;
                 }
-                catch (EmptyStackException e) {
-                    System.out.println("Too many right parentheses");
-                    return;
-                }
+
             }
         }
         if(stack.isEmpty()) {
@@ -26,7 +28,7 @@ public class StackTester {
         } else {
             System.out.println("Too many left parentheses");
         }
-
+        Stack s = new Stack();
 
 
         Browser b = new Browser();

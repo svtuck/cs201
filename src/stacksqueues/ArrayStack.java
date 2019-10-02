@@ -10,7 +10,7 @@ public class ArrayStack<T> implements CarlStack<T> {
     // Stores items
     private T[] contents;
 
-    // Tracks how many items are in my bag
+    // Tracks how many items are in my stack
     private int count;
 
     public ArrayStack(int size) {
@@ -23,7 +23,6 @@ public class ArrayStack<T> implements CarlStack<T> {
 
     @Override
     public void push(T item) {
-        //If the bag is full, return false
         if(count == contents.length) {
             contents = Arrays.copyOf(contents, contents.length + 1);
         }
@@ -32,20 +31,23 @@ public class ArrayStack<T> implements CarlStack<T> {
     }
 
     @Override
-    public T peek()  {
+    public T peek() throws EmptyStackException {
         if(count == 0) {
-            return null;
+            throw new EmptyStackException("You can't peek at an empty stack");
         }
 
-        return contents[count-1];
+        return contents[count - 1];
     }
 
     @Override
-    public T pop() {
-        if (count == 0) {
-            return null;
+    public T pop() throws EmptyStackException {
+        if( count == 0) {
+            throw new EmptyStackException("You can't pop from an empty stack");
         }
-        return contents[--count];
+        T dataToReturn = contents[count - 1];
+        count = count - 1;
+        return dataToReturn;
+
     }
 
     @Override

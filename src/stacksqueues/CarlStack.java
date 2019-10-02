@@ -1,8 +1,8 @@
 package stacksqueues;
 
-interface CarlStack<T> {
+public interface CarlStack<T> {
     void push(T item);
-    T peek();
-    T pop();
+    T peek() throws EmptyStackException;
+    T pop() throws EmptyStackException;
     boolean isEmpty();
 }
