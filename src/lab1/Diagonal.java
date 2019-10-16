@@ -60,6 +60,7 @@ public class Diagonal {
 
         int[][] matrix = readMatrixFromFilename(filename);
 
+        System.out.println(Arrays.toString(matrix));
         for(int i = 0; i < matrix.length; i++ ){
             for(int j = 0; j < matrix.length; j++) {
                 System.out.println(matrix[i][j]);

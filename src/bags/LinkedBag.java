@@ -1,5 +1,8 @@
 package bags;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class LinkedBag <T> implements Bag<T> {
 
     private class Node {
@@ -8,6 +11,7 @@ public class LinkedBag <T> implements Bag<T> {
     }
 
     Node head;
+    LinkedList contents = new LinkedList();
 
     public LinkedBag() {
         this.head = null;
