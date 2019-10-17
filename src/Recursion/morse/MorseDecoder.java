@@ -21,7 +21,7 @@ public class MorseDecoder {
 
     public static void main(String[] args){
         MorseDecoder decoder = new MorseDecoder();
-        String encoded = decoder.encode("carleton college");
+        String encoded = decoder.encode("carleton");
         System.out.println(encoded);
 
         List<String> decoded = decoder.decode(encoded);

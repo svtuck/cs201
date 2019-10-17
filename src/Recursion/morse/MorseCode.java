@@ -11,7 +11,7 @@ public class MorseCode {
         Map<Character, String> morse = new HashMap<>();
         morse.put('a', ".-");
         morse.put('b', "-...");
-        morse.put('c', "-.-");
+        morse.put('c', "-.-.");
         morse.put('d', "-..");
         morse.put('e', ".");
         morse.put('f', "..-.");
@@ -19,7 +19,7 @@ public class MorseCode {
         morse.put('h', "....");
         morse.put('i', "..");
         morse.put('j', ".---");
-        morse.put('k', "-.");
+        morse.put('k', "-.-");
         morse.put('l', ".-..");
         morse.put('m', "--");
         morse.put('n', "-.");
