@@ -145,5 +145,4 @@ public class Heap<E extends Comparable<E>>
         }
 
     }
-} {
 }
